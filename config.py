@@ -9,7 +9,7 @@ log_file = 'vox2vox.log'
 
 
 ### DATASET
-dataset_mask_train = '/mnt/Data/Datasets/BRATS_2020/TrainingData_Augmented/*/'
+dataset_mask_train = '/mnt/Data/Datasets/BRATS_2020/MICCAI_BraTS2020_TrainingData/*/'
 dataset_mask_test = '/mnt/Data/Datasets/BRATS_2020/MICCAI_BraTS2020_ValidationData/*/'
 
 num_classes = 4
@@ -19,9 +19,9 @@ dataset_dim = (240, 240, 155)
 
 
 ### AUGMENTATION
-aug_export_path = 'TrainingData_Augmented_v4'
+aug_export_path = '/mnt/Data/Datasets/BRATS_2020/Augmentation_Test'
 
-num_augmentations = 2
+num_augmentations = 1
 
 augmented_dim = (240, 240, 160)
 

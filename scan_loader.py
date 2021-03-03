@@ -141,7 +141,16 @@ def make_size_batch(im, gt, dim):
 
     # If a segmentation is given, it is resized.
     if gt is not None:
-        gt_out = np.zeros((gt.shape[0], *dim, gt.shape[4]))
+        
+        if len(gt.shape) > 4:
+            # Categorical ground truth: Contains one channel for each class 
+            # (batch_size, X, Y, Z, num_classes)
+            gt_out = np.zeros((gt.shape[0], *dim, gt.shape[4]))
+        else:
+            # Original ground truth: Contains one channel for all classes combined
+            # (batch_size, X, Y, Z)
+            gt_out = np.zeros((gt.shape[0], *dim))
+            
         gt_out[out_slices] = gt[in_slices]
     
     # If an image is given, it is resized.   
