@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.abspath('..'))
+
 import config as conf
 
 def print2file(text):

@@ -12,8 +12,10 @@ import numpy as np
 import os
 import time
 import csv
+import sys
+sys.path.append(os.path.abspath('..'))
 
-from print2file import *
+from helper_functions.print2file import *
 
 class vox2vox():
     def __init__(self, img_shape, seg_shape, class_weights, Nfilter_start=64, depth=4, LAMBDA=5, batch_num = -1, output_path = None, save_images=False):

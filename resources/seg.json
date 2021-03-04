@@ -1,0 +1,16 @@
+{
+    "model_dim": [
+        128,
+        128,
+        128
+    ],
+    "model_path": "/mnt/Data/Vox2vox_output/backups/training_7_new_thresholds/Generator_62.h5",
+    "class_weights": [
+        0.256594717502594,
+        45.465614318847656,
+        16.543336868286133,
+        49.111549377441406
+    ],
+    "num_classes": 4,
+    "num_modalities": 4
+}

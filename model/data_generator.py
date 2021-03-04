@@ -1,7 +1,10 @@
 # Tensorflow
 import numpy as np
 import tensorflow.keras.utils
-import scan_loader
+
+import os, sys
+sys.path.append(os.path.abspath('..'))
+from helper_functions import scan_loader
 
 class DataGenerator(tensorflow.keras.utils.Sequence):
     'Generates data for Keras.'

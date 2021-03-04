@@ -5,7 +5,7 @@ gpu = '0'
 
 ### OUTPUT
 output_path = '/mnt/Data/Vox2vox_output'
-log_file = 'vox2vox.log'
+log_file = '/mnt/Data/Vox2vox_output/vox2vox.log'
 
 
 ### DATASET
