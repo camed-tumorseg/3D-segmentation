@@ -2,3 +2,4 @@ backup/
 logs/
 __pychache__/
 .ipynb_checkpoints/
+*/__pycache__/

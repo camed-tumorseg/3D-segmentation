@@ -13,6 +13,7 @@ import os
 import time
 import csv
 import sys
+import gc
 sys.path.append(os.path.abspath('..'))
 
 from helper_functions.print2file import *
@@ -276,8 +277,10 @@ class vox2vox():
 
                     if b >= self.batch_num and self.batch_num > 0:
                         break
+                        
+                    gc.collect()
 
-                del(Xbatch, Ybatch) 
+                del(Xbatch, Ybatch, IDbatch) 
 
                 # Calculates average training loss for this epoch.
                 train_avg = np.mean(batch_losses)
@@ -305,6 +308,8 @@ class vox2vox():
 
                     if b >= self.batch_num and self.batch_num > 0:
                         break
+                        
+                    gc.collect()
 
                 # Calculates average validation loss.
                 valid_avg = np.mean(batch_losses)
@@ -353,12 +358,12 @@ class vox2vox():
                         
                         # Column 3: Image of predicted segmentation
                         canvas[i*imsize : (i+1)*imsize, 2*imsize : 3*imsize] = y_pred[i,:,:,imsize//2]/6
-
-                    del(Xbatch, Ybatch, IDbatch)
                     
                     # Saves image.
                     fname = (path + '/pred@epoch_{}.png').format(e+1)
                     mpim.imsave(fname, canvas, cmap='gray')
+     
+                del(Xbatch, Ybatch, IDbatch)
 
                     
                 # Saves model if it has the smallest loss so far.

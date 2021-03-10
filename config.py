@@ -19,7 +19,7 @@ dataset_dim = (240, 240, 155)
 
 
 ### AUGMENTATION
-aug_export_path = '/mnt/Data/Datasets/BRATS_2020/Augmentation_Test'
+aug_export_path = '/mnt/Data/Datasets/BRATS_2020/TrainingData_Augmented'
 
 num_augmentations = 1
 
@@ -30,12 +30,14 @@ augmented_dim = (240, 240, 160)
 num_epochs = 100
 batch_size = 4
 
-continue_training = False
-make_new_splits = True
+continue_training = True
+make_new_splits = False
 export_images = False
 
-model_dim = (128, 128, 128)
-
+#model_dim = (128, 128, 128)
+#model_dim = (240, 240, 160)
+model_dim = (160, 192, 128)
 
 ### EVALUATION
+weight_folder = "/mnt/Data/Vox2vox_output/models/Vox2Vox_192_epoch58/output"
 eval_export_path = "export"
